@@ -1,5 +1,4 @@
-
-NAME = serialisation
+NAME = ex02
 
 SRCS_DIR = ./
 
