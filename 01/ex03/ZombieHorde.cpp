@@ -21,7 +21,7 @@ ZombieHorde::ZombieHorde(int n): _nb(n)
 	{
 		_zombies[i].setName(randomName());
 		_zombies[i].setType("Horde");
-		}	
+	}	
 }
 
 ZombieHorde::~ZombieHorde(void)

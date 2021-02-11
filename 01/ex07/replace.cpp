@@ -22,14 +22,12 @@ int     main(int ac, char **av)
 	{
 		std::ifstream in(av[1]);
 		std::string output(av[1]);
-		std::cout << "TEST1" << std::endl;
+
 		output += ".replace";
-		std::cout << "TEST2" << std::endl;
 		std::ofstream out(output);
-		std::cout << "TEST3" << std::endl;
+
 		std::string wordToReplace(av[2]);
 		std::string wordToReplaceWith(av[3]);
-		std::cout << "TEST5" << std::endl;
 
 		if (!in)
 		{
@@ -52,4 +50,5 @@ int     main(int ac, char **av)
 			out << line << std::endl;
 		}
 	}
+	return (0);
 }

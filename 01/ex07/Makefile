@@ -11,7 +11,7 @@ OBJ = $(SRCS:.cpp=.o)
 
 OBJS = $(addprefix $(OBJS_DIR), $(OBJ))
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror
 
 $(OBJS_DIR)%.o : $(SRCS_DIR)%.cpp
 	@mkdir -p $(OBJS_DIR)
