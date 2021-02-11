@@ -15,18 +15,20 @@
 
 Human::Human(void)
 {
+	_brain = new Brain();
 }
 
 Human::~Human(void)
 {
+	delete _brain;
 }
 
-Brain	Human::getBrain(void)
+Brain	&Human::getBrain(void)
 {
-	return (_brain);
+	return (*this->_brain);
 }
 
 std::string	Human::identify(void)
 {
-	return (_brain.identify());
+	return (this->getBrain().identify());
 }

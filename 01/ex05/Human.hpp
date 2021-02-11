@@ -25,12 +25,12 @@ class    Human
 		Human(void);
 		~Human(void);
 		
-		Brain	getBrain(void);
+		Brain	&getBrain(void);
 		std::string	identify(void);
 
 	private:
 
-		Brain	_brain;
+		Brain	*_brain;
 };
 
 #endif
