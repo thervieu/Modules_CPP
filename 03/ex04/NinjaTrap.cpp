@@ -57,7 +57,7 @@ NinjaTrap::~NinjaTrap(void)
 
 void	NinjaTrap::rangedAttack(std::string const & target)
 {
-	std::cout << "NinjaTrap <" << _name << "> uses his psychic abilities on " << target << " doing"  << _rangedAttackDamage << " damage (ranged attack)" << std::endl;
+	std::cout << "NinjaTrap <" << _name << "> uses his psychic abilities on " << target << " doing "  << _rangedAttackDamage << " damage (ranged attack)" << std::endl;
 }
 
 void	NinjaTrap::meleeAttack(std::string const & target)

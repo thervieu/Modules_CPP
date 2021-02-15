@@ -14,22 +14,30 @@
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
-	_energyPoints = 100;
-	_maxEnergyPoints = 100;
+	_hitPoints = 100;
+	_maxHitPoints = 100;
+	_energyPoints = 50;
+	_maxEnergyPoints = 50;
+	_level = 1;
+	_name = "Default";
 	_meleeAttackDamage = 20;
 	_rangedAttackDamage = 15;
-	_armorDamageReduction = 4;
+	_armorDamageReduction = 3;
 	_level = 1;
 	std::cout << "ScavTrap Default Constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-	_energyPoints = 100;
-	_maxEnergyPoints = 100;
-	_meleeAttackDamage = 30;
-	_rangedAttackDamage = 20;
-	_armorDamageReduction = 5;
+	_hitPoints = 100;
+	_maxHitPoints = 100;
+	_energyPoints = 50;
+	_maxEnergyPoints = 50;
+	_level = 1;
+	_name = name;
+	_meleeAttackDamage = 20;
+	_rangedAttackDamage = 15;
+	_armorDamageReduction = 3;
 	_level = 1;
 	std::cout << "ScavTrap Default Constructor called" << std::endl;
 }
@@ -60,23 +68,21 @@ void	ScavTrap::challengeNewcomer(std::string target)
 	        "Sing a Song"
 	};
 
-	std::string challenge = challenges[rand() % 4];
-
-		if (this->_energyPoints >= 25)
+	if (this->_energyPoints >= 25)
 	{
 		this->_energyPoints -= 25;
-		std::cout << "challenged " << target << " with " << challenge << "." << std::endl;
+		std::cout << "ScavTrap <" << _name << "> challenged " << target << " with " << challenges[rand() % 4] << "." << std::endl;
 	}
 	else
-		std::cout << "Crap! not enough energy points !" << std::endl;
+		std::cout << "ScavTrap <" << _name << "> Crap! not enough energy points !" << std::endl;
 }
 
 void	ScavTrap::rangedAttack(std::string const & target)
 {
-	std::cout << "SCAVTRAP <" << _name << "> uses his psychic abilities on " << target << "d oing"  << _rangedAttackDamage << " damage (ranged attack)" << std::endl;
+	std::cout << "ScavTrap <" << _name << "> uses his psychic abilities on " << target << " doing "  << _rangedAttackDamage << " damage (ranged attack)" << std::endl;
 }
 
 void	ScavTrap::meleeAttack(std::string const & target)
 {
-	std::cout << "SCAVTRAP <" << _name << "> uses his fierce fists on " << target  << " doing " << _meleeAttackDamage << " damage (melee attack)" << std::endl;
+	std::cout << "ScavTrap <" << _name << "> uses his fierce fists on " << target  << " doing " << _meleeAttackDamage << " damage (melee attack)" << std::endl;
 }

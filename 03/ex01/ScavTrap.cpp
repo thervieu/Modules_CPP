@@ -33,8 +33,8 @@ ScavTrap::ScavTrap(std::string name)
 	_maxEnergyPoints = 50;
 	_level = 1;
 	_name = name;
-	_meleeAttackDamage = 15;
-	_rangedAttackDamage = 20;
+	_meleeAttackDamage = 20;
+	_rangedAttackDamage = 15;
 	_armorDamageReduction = 3;
 	std::cout << "ScavTrap Default Constructor called" << std::endl;
 }
@@ -69,28 +69,28 @@ ScavTrap::~ScavTrap()
 
 void	ScavTrap::rangedAttack(std::string const & target)
 {
-	std::cout << "SCAVTRAP <" << _name << "> uses his psychic abilities on " << target << " doing "  << _rangedAttackDamage << " damage (ranged attack)" << std::endl;
+	std::cout << "ScavTrap <" << _name << "> uses his psychic abilities on " << target << " doing "  << _rangedAttackDamage << " damage (ranged attack)" << std::endl;
 }
 
 void	ScavTrap::meleeAttack(std::string const & target)
 {
-	std::cout << "SCAVTRAP <" << _name << "> uses his fierce fists on " << target  << " doing " << _meleeAttackDamage << " damage (melee attack)" << std::endl;
+	std::cout << "ScavTrap <" << _name << "> uses his fierce fists on " << target  << " doing " << _meleeAttackDamage << " damage (melee attack)" << std::endl;
 }
 
 void	ScavTrap::takeDamage(unsigned int amount)
 {
 	int am = amount;
 	am = ((am - _armorDamageReduction) > 0) ? am - _armorDamageReduction : 0;
-	std::cout << "SCAVTRAP <" << _name << "> takes " << am << " damage !!!" << std::endl;
+	std::cout << "ScavTrap <" << _name << "> takes " << am << " damage !!!" << std::endl;
 	_hitPoints = ((_hitPoints - am) > 0) ? _hitPoints - am : 0;
-	std::cout << "SCAVTRAP <" << _name << "> hit points : " << _hitPoints << std::endl;
+	std::cout << "ScavTrap <" << _name << "> hit points : " << _hitPoints << std::endl;
 }
 
 void	ScavTrap::beRepaired(unsigned int amount)
 {
-	std::cout << "SCAVTRAP <" << _name << "> is repaired !" << std::endl;
+	std::cout << "ScavTrap <" << _name << "> is repaired !" << std::endl;
 	_hitPoints = (_hitPoints + amount <= 100) ? (_hitPoints + amount) : 100;
-	std::cout << "SCAVTRAP <" << _name << "> hit points : " << _hitPoints << std::endl;
+	std::cout << "ScavTrap <" << _name << "> hit points : " << _hitPoints << std::endl;
 }
 
 void	ScavTrap::challengeNewcomer(std::string target)
@@ -102,13 +102,11 @@ void	ScavTrap::challengeNewcomer(std::string target)
 	        "Sing a Song"
 	};
 
-	std::string challenge = challenges[rand() % 4];
-
-		if (this->_energyPoints >= 25)
+	if (this->_energyPoints >= 25)
 	{
 		this->_energyPoints -= 25;
-		std::cout << "challenged " << target << " with " << challenge << "." << std::endl;
+		std::cout << "ScavTrap <" << _name << "> challenged " << target << " with " << challenges[rand() % 4] << "." << std::endl;
 	}
 	else
-		std::cout << "Crap! not enough energy points !" << std::endl;
+		std::cout << "ScavTrap <" << _name << "> Crap! not enough energy points !" << std::endl;
 }

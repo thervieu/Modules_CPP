@@ -64,33 +64,33 @@ FragTrap	&FragTrap::operator=(const FragTrap& ft)
 
 FragTrap::~FragTrap()
 {
-	std::cout << "FragTrap Default Destructor called" << std::endl;
+	std::cout << "FragTrap Destructor called" << std::endl;
 }
 
 void	FragTrap::rangedAttack(std::string const & target)
 {
-	std::cout << "FRAGTRAP <" << _name << "> uses his psychic abilities on " << target << " doing "  << _rangedAttackDamage << " damage (ranged attack)" << std::endl;
+	std::cout << "FragTrap <" << _name << "> uses his psychic abilities on " << target << " doing "  << _rangedAttackDamage << " damage (ranged attack)" << std::endl;
 }
 
 void	FragTrap::meleeAttack(std::string const & target)
 {
-	std::cout << "FRAGTRAP <" << _name << "> uses his fierce fists on " << target  << " doing " << _meleeAttackDamage << " damage (melee attack)" << std::endl;
+	std::cout << "FragTrap <" << _name << "> uses his fierce fists on " << target  << " doing " << _meleeAttackDamage << " damage (melee attack)" << std::endl;
 }
 
 void	FragTrap::takeDamage(unsigned int amount)
 {
 	int am = amount;
 	am = ((am - _armorDamageReduction) > 0) ? am - _armorDamageReduction : 0;
-	std::cout << "FRAGTRAP <" << _name << "> takes " << am << " damage !!!" << std::endl;
+	std::cout << "FragTrap <" << _name << "> takes " << am << " damage !!!" << std::endl;
 	_hitPoints = ((_hitPoints - am) > 0) ? _hitPoints - am : 0;
-	std::cout << "FRAGTRAP <" << _name << "> hit points : " << _hitPoints << std::endl;
+	std::cout << "FragTrap <" << _name << "> hit points : " << _hitPoints << std::endl;
 }
 
 void	FragTrap::beRepaired(unsigned int amount)
 {
-	std::cout << "FRAGTRAP <" << _name << "> is repaired !" << std::endl;
+	std::cout << "FragTrap <" << _name << "> is repaired !" << std::endl;
 	_hitPoints = (_hitPoints + amount <= 100) ? (_hitPoints + amount) : 100;
-	std::cout << "FRAGTRAP <" << _name << "> hit points : " << _hitPoints << std::endl;
+	std::cout << "FragTrap <" << _name << "> hit points : " << _hitPoints << std::endl;
 }
 
 void	FragTrap::vaulthunter_dot_exe(std::string const & target)
@@ -99,28 +99,15 @@ void	FragTrap::vaulthunter_dot_exe(std::string const & target)
 	        "Fireball",
 	        "Earthball",
 	        "Waterball",
-	        "Lightball"
-	        "Airball",
+	        "Lightball",
+	        "Airball"
 	};
-
-	static const long damages[] = {
-	        10,
-	        12,
-	        4,
-	        23,
-	        7
-	};
-
-	int random = rand() % 5;
-
-	std::string attack = attacks[random];
-	long damage = damages[random];
 
 	if (this->_energyPoints >= 25)
 	{
 		this->_energyPoints -= 25;
-		std::cout << "attacked " << target << " with " << attack << " and does " << damage << " damage(s)." << std::endl;
+		std::cout <<  "FragTrap <" << _name << "> attacked " << target << " with " << attacks[rand() % 5] << "." << std::endl;
 	}
 	else
-		std::cout << "Crap! (not enough energy points !" << std::endl;
+		std::cout <<  "FragTrap <" << _name << "> Crap! not enough energy points !" << std::endl;
 }

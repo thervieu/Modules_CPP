@@ -12,25 +12,30 @@
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() : ClapTrap()
+FragTrap::FragTrap()
 {
+	_hitPoints = 100;
+	_maxHitPoints = 100;
 	_energyPoints = 100;
 	_maxEnergyPoints = 100;
+	_level = 1;
+	_name = "Default";
 	_meleeAttackDamage = 30;
 	_rangedAttackDamage = 20;
 	_armorDamageReduction = 5;
-	_level = 1;
-	std::cout << "FragTrap Default Constructor called" << std::endl;
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name)
+FragTrap::FragTrap(std::string name)
 {
+	_hitPoints = 100;
+	_maxHitPoints = 100;
 	_energyPoints = 100;
 	_maxEnergyPoints = 100;
+	_level = 1;
+	_name = name;
 	_meleeAttackDamage = 30;
 	_rangedAttackDamage = 20;
 	_armorDamageReduction = 5;
-	_level = 1;
 	std::cout << "FragTrap Default Constructor called" << std::endl;
 }
 
@@ -48,47 +53,34 @@ FragTrap	&FragTrap::operator=(FragTrap const &other)
 
 FragTrap::~FragTrap(void)
 {
-	std::cout << "FragTrap Default Destructor called" << std::endl;
+	std::cout << "FragTrap Destructor called" << std::endl;
 }
 
 void	FragTrap::vaulthunter_dot_exe(std::string const & target)
 {
-	static const std::string attacks[5] = {
+	static const std::string attacks[] = {
 	        "Fireball",
 	        "Earthball",
 	        "Waterball",
-	        "Lightball"
-	        "Airball",
+	        "Lightball",
+	        "Airball"
 	};
-
-	static const long damages[5] = {
-	        10,
-	        12,
-	        4,
-	        23,
-	        7
-	};
-
-	int random = rand() % 5;
-
-	std::string attack = attacks[random];
-	long damage = damages[random];
 
 	if (this->_energyPoints >= 25)
 	{
 		this->_energyPoints -= 25;
-		std::cout << "attacked " << target << " with " << attack << " and does " << damage << " damage(s)." << std::endl;
+		std::cout <<  "FragTrap <" << _name << "> attacked " << target << " with " << attacks[rand() % 5] << "." << std::endl;
 	}
 	else
-		std::cout << "Crap! (not enough energy points !" << std::endl;
+		std::cout <<  "FragTrap <" << _name << "> Crap! not enough energy points !" << std::endl;
 }
 
 void	FragTrap::rangedAttack(std::string const & target)
 {
-	std::cout << "FRAGTRAP <" << _name << "> uses his psychic abilities on " << target << "d oing"  << _rangedAttackDamage << " damage (ranged attack)" << std::endl;
+	std::cout << "FragTrap <" << _name << "> uses his psychic abilities on " << target << " doing "  << _rangedAttackDamage << " damage (ranged attack)" << std::endl;
 }
 
 void	FragTrap::meleeAttack(std::string const & target)
 {
-	std::cout << "FRAGTRAP <" << _name << "> uses his fierce fists on " << target  << " doing " << _meleeAttackDamage << " damage (melee attack)" << std::endl;
+	std::cout << "FragTrap <" << _name << "> uses his fierce fists on " << target  << " doing " << _meleeAttackDamage << " damage (melee attack)" << std::endl;
 }

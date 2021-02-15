@@ -5,20 +5,26 @@
 int main()
 {
 	srand(time(NULL));
-	NinjaTrap ent0("hero");
-	ClapTrap ent1("uselessbot");
-	FragTrap ent2("exterminatronc");
-	ScavTrap ent3("trunkminator");
-	NinjaTrap ent4("trainingbot");
+	NinjaTrap ninja("hero");
+	std::cout << std::endl;
+	ClapTrap clap("uselessbot");
+	std::cout << std::endl;
+	FragTrap frag("exterminatronc");
+	std::cout << std::endl;
+	ScavTrap scav("trunkminator");
+	std::cout << std::endl;
+	NinjaTrap ninja2("trainingbot");
 
-	ent0.rangedAttack("brobot");
-	ent0.meleeAttack("brobot");
-	ent0.beRepaired(20);
-	ent0.takeDamage(100);
-	ent0.takeDamage(20);
-	ent0.ninjaShoeBox(ent1);
-	ent0.ninjaShoeBox(ent2);
-	ent0.ninjaShoeBox(ent3);
-	ent0.ninjaShoeBox(ent4);
-	ent0.ninjaShoeBox(ent1);
+	ninja.rangedAttack("brobot");
+	ninja.meleeAttack("brobot");
+	std::cout << std::endl;
+	ninja.beRepaired(20);
+	ninja.takeDamage(100);
+	ninja.takeDamage(20);
+	std::cout << std::endl;
+	ninja.ninjaShoeBox(clap);
+	ninja.ninjaShoeBox(frag);
+	ninja.ninjaShoeBox(scav);
+	ninja.ninjaShoeBox(ninja2);
+	std::cout << std::endl;
 }

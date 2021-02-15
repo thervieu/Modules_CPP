@@ -85,7 +85,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 
 void	ClapTrap::rangedAttack(std::string const & target)
 {
-	std::cout << "ClapTrap <" << _name << "> uses his psychic abilities on " << target << "d oing"  << _rangedAttackDamage << " damage (ranged attack)" << std::endl;
+	std::cout << "ClapTrap <" << _name << "> uses his psychic abilities on " << target << " doing "  << _rangedAttackDamage << " damage (ranged attack)" << std::endl;
 }
 
 void	ClapTrap::meleeAttack(std::string const & target)

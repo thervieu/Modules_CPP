@@ -22,6 +22,7 @@ NinjaTrap::NinjaTrap() : ClapTrap()
 	_rangedAttackDamage = 5;
 	_armorDamageReduction = 0;
 	_level = 1;
+	_name = "default";
 	std::cout << "NinjaTrap Default Constructor called" << std::endl;
 }
 
@@ -29,12 +30,13 @@ NinjaTrap::NinjaTrap(std::string name) : ClapTrap(name)
 {
 	_hitPoints = 60;
 	_maxHitPoints = 60;
-	_energyPoints = 15;
+	_energyPoints = 120;
 	_maxEnergyPoints = 120;
 	_meleeAttackDamage = 60;
 	_rangedAttackDamage = 5;
 	_armorDamageReduction = 0;
 	_level = 1;
+	_name = name;
 	std::cout << "NinjaTrap Default Constructor called" << std::endl;
 }
 
@@ -57,7 +59,7 @@ NinjaTrap::~NinjaTrap(void)
 
 void	NinjaTrap::rangedAttack(std::string const & target)
 {
-	std::cout << "NinjaTrap <" << _name << "> uses his psychic abilities on " << target << " doing"  << _rangedAttackDamage << " damage (ranged attack)" << std::endl;
+	std::cout << "NinjaTrap <" << _name << "> uses his psychic abilities on " << target << " doing "  << _rangedAttackDamage << " damage (ranged attack)" << std::endl;
 }
 
 void	NinjaTrap::meleeAttack(std::string const & target)

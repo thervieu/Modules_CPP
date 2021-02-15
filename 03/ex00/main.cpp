@@ -3,19 +3,23 @@
 int main()
 {
 	srand(time(NULL));
-	FragTrap ent("FT_example");
+	FragTrap michel("Michel");
+	std::cout << std::endl;
 	
-	ent.rangedAttack("robot");
-	ent.meleeAttack("robot");
+	michel.rangedAttack("robot");
+	michel.meleeAttack("robot");
+	std::cout << std::endl;
 
-	ent.beRepaired(20);
-	ent.takeDamage(100);
-	ent.takeDamage(20);
-	ent.beRepaired(50);
+	michel.beRepaired(20);
+	michel.takeDamage(100);
+	michel.takeDamage(20);
+	michel.beRepaired(50);
+	std::cout << std::endl;
 
-	ent.vaulthunter_dot_exe("robot");
-	ent.vaulthunter_dot_exe("robot");
-	ent.vaulthunter_dot_exe("robot");
-	ent.vaulthunter_dot_exe("robot");
-	ent.vaulthunter_dot_exe("robot");
+	michel.vaulthunter_dot_exe("robot");
+	michel.vaulthunter_dot_exe("robot");
+	michel.vaulthunter_dot_exe("robot");
+	michel.vaulthunter_dot_exe("robot");
+	michel.vaulthunter_dot_exe("robot");
+	std::cout << std::endl;
 }

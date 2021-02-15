@@ -14,19 +14,27 @@
 
 SuperTrap::SuperTrap()
 {
+	_name = "Default";
+	_hitPoints = 100;
+	_maxHitPoints = 100;
+	_energyPoints = 120;
+	_maxEnergyPoints = 120;
+	_meleeAttackDamage = 60;
+	_rangedAttackDamage = 20;
+	_armorDamageReduction = 5;
 	std::cout << "SuperTrap Default Constructor called" << std::endl;
 }
 
-SuperTrap::SuperTrap(std::string name)
+SuperTrap::SuperTrap(std::string name): FragTrap(name), NinjaTrap(name)
 {
 	_name = name;
 	_hitPoints = 100;
 	_maxHitPoints = 100;
-	_energyPoints = 60;
-	_maxEnergyPoints = 60;
+	_energyPoints = 120;
+	_maxEnergyPoints = 120;
 	_meleeAttackDamage = 60;
-	_rangedAttackDamage = 15;
-	_armorDamageReduction = 3;
+	_rangedAttackDamage = 20;
+	_armorDamageReduction = 5;
 	std::cout << "SuperTrap Default Constructor called" << std::endl;
 }
 
@@ -66,4 +74,5 @@ void	SuperTrap::printStats(void)
 	std::cout << "maxEnergyPoints " << _maxEnergyPoints << std::endl;
 	std::cout << "meleeAttackDamage " << _meleeAttackDamage << std::endl;
 	std::cout << "rangedAttackDamage " << _rangedAttackDamage << std::endl;
+	std::cout << "armorDamageReduction " << _armorDamageReduction << std::endl;
 }
