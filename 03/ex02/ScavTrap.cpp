@@ -76,13 +76,3 @@ void	ScavTrap::challengeNewcomer(std::string target)
 	else
 		std::cout << "ScavTrap <" << _name << "> Crap! not enough energy points !" << std::endl;
 }
-
-void	ScavTrap::rangedAttack(std::string const & target)
-{
-	std::cout << "ScavTrap <" << _name << "> uses his psychic abilities on " << target << " doing "  << _rangedAttackDamage << " damage (ranged attack)" << std::endl;
-}
-
-void	ScavTrap::meleeAttack(std::string const & target)
-{
-	std::cout << "ScavTrap <" << _name << "> uses his fierce fists on " << target  << " doing " << _meleeAttackDamage << " damage (melee attack)" << std::endl;
-}

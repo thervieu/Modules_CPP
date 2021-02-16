@@ -5,15 +5,16 @@
 int main()
 {
 	srand(time(NULL));
-	NinjaTrap ninja("hero");
-	std::cout << std::endl;
 	ClapTrap clap("uselessbot");
+	std::cout << std::endl;
+	NinjaTrap ninja("hero");
 	std::cout << std::endl;
 	FragTrap frag("exterminatronc");
 	std::cout << std::endl;
 	ScavTrap scav("trunkminator");
 	std::cout << std::endl;
 	NinjaTrap ninja2("trainingbot");
+	std::cout << std::endl;
 
 	ninja.rangedAttack("brobot");
 	ninja.meleeAttack("brobot");

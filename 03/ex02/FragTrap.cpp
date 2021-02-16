@@ -74,13 +74,3 @@ void	FragTrap::vaulthunter_dot_exe(std::string const & target)
 	else
 		std::cout <<  "FragTrap <" << _name << "> Crap! not enough energy points !" << std::endl;
 }
-
-void	FragTrap::rangedAttack(std::string const & target)
-{
-	std::cout << "FragTrap <" << _name << "> uses his psychic abilities on " << target << " doing "  << _rangedAttackDamage << " damage (ranged attack)" << std::endl;
-}
-
-void	FragTrap::meleeAttack(std::string const & target)
-{
-	std::cout << "FragTrap <" << _name << "> uses his fierce fists on " << target  << " doing " << _meleeAttackDamage << " damage (melee attack)" << std::endl;
-}
