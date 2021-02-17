@@ -25,15 +25,14 @@ AssaultTerminator	&AssaultTerminator::operator= (const AssaultTerminator &rhs)
     return (*this);
 }
 
+ISpaceMarine	*AssaultTerminator::clone(void) const
+{
+    return (new AssaultTerminator);
+}
+
 void	AssaultTerminator::battleCry(void) const
 {
     std::cout << "This code is unclean. PURIFY IT !" << std::endl;
-    return ;
-}
-
-void	AssaultTerminator::meleeAttack(void) const
-{
-    std::cout << "* attacks with chainfists *" << std::endl;
     return ;
 }
 
@@ -43,7 +42,8 @@ void	AssaultTerminator::rangedAttack(void) const
     return ;
 }
 
-ISpaceMarine	*AssaultTerminator::clone(void) const
+void	AssaultTerminator::meleeAttack(void) const
 {
-    return (new AssaultTerminator);
+    std::cout << "* attacks with chainfists *" << std::endl;
+    return ;
 }

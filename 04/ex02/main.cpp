@@ -6,30 +6,80 @@
 #include "TacticalMarine.hpp"
 #include "AssaultTerminator.hpp"
 
-int		main(void)
+int main()
 {
-    ISquad* vlc = new Squad;
-    ISpaceMarine* bob = new TacticalMarine;
-    ISpaceMarine* jim = new AssaultTerminator;
+	ISpaceMarine* bob = new TacticalMarine;
+	ISpaceMarine* jim = new AssaultTerminator;
 
-    vlc->push(bob);
-    vlc->push(jim);
+	ISquad* vlc = new Squad;
+	
+	vlc->push(bob);
+	vlc->push(jim);
+	vlc->push(jim->clone());
+	std::cout << std::endl;
+	
+	for (int i = 0; i < vlc->getCount(); ++i)
+	{
+		ISpaceMarine* cur = vlc->getUnit(i);
+		cur->battleCry();
+		cur->rangedAttack();
+		cur->meleeAttack();
+		std::cout << std::endl;
+	}
+	
+	std::cout << "There are " << vlc->getCount() << " element(s) in the squad." << std::endl << std::endl;
+	
+	std::cout << "Adding NULL..." << std::endl;
+	vlc->push(NULL);
+	
+	std::cout << "There are " << vlc->getCount() << " element(s) in the squad." << std::endl << std::endl;
+	
+	std::cout << "Adding bob again..." << std::endl;
+	vlc->push(bob);
 
-    for (int i = 0; i < vlc->getCount(); ++i)
-    {
-        ISpaceMarine* cur = vlc->getUnit(i);
-        cur->battleCry();
-        cur->rangedAttack();
-        cur->meleeAttack();
-    }
+	std::cout << "There are " << vlc->getCount() << " element(s) in the squad." << std::endl << std::endl;
+	
+	std::cout << "Adding a clone from bob..." << std::endl;
+	vlc->push(bob->clone());
 
-    vlc->getUnit(0)->battleCry();
-    vlc->getUnit(1)->battleCry();
-    vlc->getUnit(0)->rangedAttack();
-    vlc->getUnit(1)->rangedAttack();
-    vlc->getUnit(0)->meleeAttack();
-    vlc->getUnit(1)->meleeAttack();
+	std::cout << "There are " << vlc->getCount() << " element(s) in the squad." << std::endl << std::endl;
 
-    delete vlc;
-    return (0);
+	std::cout << "Deleting squad." << std::endl << std::endl;
+	delete vlc;
+
+	std::cout << "Copy constructor :" << std::endl;
+	
+	TacticalMarine* tact = new TacticalMarine;
+	AssaultTerminator* term = new AssaultTerminator;
+
+	TacticalMarine* tact2 = new TacticalMarine(*tact);
+	AssaultTerminator* term2 = new AssaultTerminator(*term);
+
+	Squad *squad = new Squad;
+
+	squad->push(tact2);
+	squad->push(term2);
+
+	delete tact;
+	delete term;
+
+	delete squad;
+/*
+	std::cout << "Deep Copy" << std::endl;
+
+	TacticalMarine* tact3 = new TacticalMarine;
+	AssaultTerminator* term3 = new AssaultTerminator;
+	
+	Squad *squad2 = new Squad;
+	Squad *squad3 = new Squad;
+
+	squad2->push(tact3);
+	squad3->push(term3);
+
+	squad2 = squad3;
+
+	delete squad2;
+	delete tact3;
+*/
+	return (0);
 }

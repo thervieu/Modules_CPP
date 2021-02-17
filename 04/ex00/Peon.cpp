@@ -6,7 +6,7 @@ Peon::Peon(void)
 	std::cout << "Zog Zog !" << std::endl;
 }
 
-Peon::Peon(std::string name)
+Peon::Peon(std::string name) : Victim(name)
 {
 	_name = name;
 	std::cout << "Zog Zog !" << std::endl;

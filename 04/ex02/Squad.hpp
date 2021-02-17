@@ -13,7 +13,7 @@ class Squad : public ISquad
         Squad(void);
         Squad(const Squad &src);
 
-        ~Squad(void);
+        virtual ~Squad(void);
 
         Squad   &operator=(const Squad &rhs);
 
@@ -23,6 +23,7 @@ class Squad : public ISquad
         virtual ISpaceMarine  *getUnit(int n) const;
 
     private:
+
         typedef struct        s_container
         {
             ISpaceMarine          *unit;

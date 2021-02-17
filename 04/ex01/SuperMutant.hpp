@@ -13,7 +13,7 @@ class SuperMutant: public Enemy
         SuperMutant(const SuperMutant &src);
         SuperMutant(int hp, const std::string &type);
 
-        ~SuperMutant(void);
+        virtual ~SuperMutant(void);
 
         SuperMutant		&operator= (const SuperMutant &rhs);
 };

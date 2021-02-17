@@ -1,8 +1,8 @@
 #include "SuperMutant.hpp"
 
-SuperMutant::SuperMutant(void) : SuperMutant::Enemy("SuperMutant", 80)
+SuperMutant::SuperMutant(void) : Enemy(170, "SuperMutant")
 {
-    std::cout << "* click click click *" << std::endl;
+    std::cout << "Gaaah. Break everything !" << std::endl;
     return ;
 }
 
@@ -14,7 +14,7 @@ SuperMutant::SuperMutant(const SuperMutant &src)
 
 SuperMutant::~SuperMutant(void)
 {
-    std::cout << "* SPROTCH *" << std::endl;
+    std::cout << "Aaargh ..." << std::endl;
     return ;
 }
 

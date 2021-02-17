@@ -3,28 +3,32 @@
 
 # include <string>
 # include <cstdlib>
+# include <iostream>
 
 # include "ICharacter.hpp"
 
 class AMateria
 {
-    public:
-        AMateria(void);
-        AMateria(const std::string &type);
-        AMateria(const AMateria &src);
-        virtual             ~AMateria(void);
+	public:
+		AMateria(void);
+		AMateria(const std::string &type);
+		AMateria(const AMateria &src);
+		virtual             ~AMateria(void);
 
-        AMateria &operator= (const AMateria &rhs);
+		AMateria &operator= (const AMateria &rhs);
 
-        virtual AMateria    *clone(void) const = 0;
-        virtual void        use(ICharacter &target) = 0;
+		virtual AMateria    *clone(void) const = 0;
+		virtual void        use(ICharacter &target);
 
-        unsigned int        getXP(void) const;
-        const std::string   &getType(void) const;
+		std::string const	&getType(void) const;
+		unsigned int        getXP(void) const;
 
-    protected:
-        unsigned int        xp_;
-        std::string         _type;
+	protected:
+
+		unsigned int        _xp;
+		std::string         _type;
 };
+
+std::ostream &			operator<<(std::ostream &o, AMateria const &i);
 
 #endif

@@ -44,7 +44,7 @@ int               AWeapon::getDamage(void) const
 	return (_damage);
 }
 
-const std::string AWeapon::getName(void) const
+std::string AWeapon::getName(void) const
 {
 	return (_name);
 

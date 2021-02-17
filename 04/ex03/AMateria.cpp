@@ -7,7 +7,7 @@ AMateria::AMateria(void)
 
 AMateria::AMateria(const std::string &type)
 {
-	this->xp_ = 0;
+	this->_xp = 0;
 	this->_type = type;
 	return ;
 }
@@ -27,10 +27,16 @@ AMateria    &AMateria::operator= (const AMateria &rhs)
 {
 	if (this != &rhs)
 	{
-		this->xp_ = rhs.xp_;
+		this->_xp = rhs._xp;
 		this->_type = rhs._type;
 	}
 	return (*this);
+}
+
+void        AMateria::use(ICharacter &target)
+{
+	(void)target;
+	this->_xp += 10;
 }
 
 const std::string   &AMateria::getType(void) const
@@ -40,5 +46,11 @@ const std::string   &AMateria::getType(void) const
 
 unsigned int  AMateria::getXP(void) const
 {
-	return (this->xp_);
+	return (this->_xp);
+}
+
+std::ostream &			operator<<(std::ostream &o, AMateria const &i)
+{
+	o << "Materia type is:" << i.getType() << " XP:" << i.getXP() << std::endl;
+	return o;
 }

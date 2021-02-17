@@ -9,6 +9,7 @@ Squad::Squad(void)
 
 Squad::Squad(const Squad &src)
 {
+    _destroyUnits();
     _copyUnits(src);
     _nbr_units = src._nbr_units;
     return ;
@@ -39,12 +40,10 @@ int		Squad::push(ISpaceMarine *marine)
     if (marine != NULL && _unitAlreadyIn(marine, tmp) == false)
     {
         tmp = _squad;
-        if (_squad != NULL)
+        if (tmp != NULL)
         {
             while (tmp->next)
-            {
                 tmp = tmp->next;
-            }
             tmp->next = new t_container;
             tmp->next->unit = marine;
             tmp->next->next = NULL;
@@ -55,7 +54,7 @@ int		Squad::push(ISpaceMarine *marine)
             _squad->unit = marine;
             _squad->next = NULL;
         }
-        _nbr_units += 1;
+        _nbr_units ++;
     }
     return (_nbr_units);
 }
@@ -84,10 +83,8 @@ ISpaceMarine	*Squad::getUnit(int n) const
 
 void	Squad::_copyUnits(const Squad &src)
 {
-    for (int i = 0; i < src.getCount(); i += 1)
-    {
+    for (int i = 0; i < src.getCount(); i++)
         push(src.getUnit(i));
-    }
     return ;
 }
 
@@ -97,11 +94,13 @@ void	Squad::_destroyUnits(void)
 
     if (_squad != NULL)
     {
-        delete _squad->unit;
-        tmp = _squad;
-        _squad = _squad->next;
-        delete tmp;
-        return (_destroyUnits());
+        while (_squad)
+        {
+            delete _squad->unit;
+            tmp = _squad;
+            _squad = _squad->next;
+            delete tmp;
+        }
     }
     return ;
 }
@@ -109,15 +108,9 @@ void	Squad::_destroyUnits(void)
 bool	Squad::_unitAlreadyIn(ISpaceMarine *marine, t_container *squad)
 {
     if (squad == NULL)
-    {
         return (false);
-    }
     else if (marine == squad->unit)
-    {
         return (true);
-    }
     else
-    {
         return (_unitAlreadyIn(marine, squad->next));
-    }
 }

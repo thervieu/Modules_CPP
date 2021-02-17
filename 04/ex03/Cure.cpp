@@ -20,7 +20,7 @@ Cure    &Cure::operator= (const Cure &rhs)
 {
 	if (this != &rhs)
 	{
-		this->xp_ = rhs.xp_;
+		this->_xp = rhs._xp;
 	}
 	return (*this);
 }
@@ -32,6 +32,7 @@ AMateria    *Cure::clone(void) const
 
 void    Cure::use(ICharacter &target)
 {
+	AMateria::use(target);
 	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 	return ;
 }

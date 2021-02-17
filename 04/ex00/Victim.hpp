@@ -11,7 +11,7 @@ class Victim
 		Victim(void);
 		Victim(std::string);
 		Victim(const Victim&);
-		~Victim(void);
+		virtual	~Victim(void);
 		Victim &operator=(const Victim&);
 
 		void	getPolymorphed(void) const;

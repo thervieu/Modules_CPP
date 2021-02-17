@@ -12,10 +12,10 @@ Enemy::Enemy(const Enemy &src)
     return ;
 }
 
-Enemy::Enemy(const std::string &type, int hp)
+Enemy::Enemy(int hp, const std::string &type)
 {
-    _type = type;
     _hp = hp;
+    _type = type;
     return ;
 }
 

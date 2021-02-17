@@ -12,7 +12,7 @@ class Sorcerer
 		Sorcerer(void);
 		Sorcerer(std::string, std::string);
 		Sorcerer(const Sorcerer&);
-		~Sorcerer(void);
+		virtual	~Sorcerer(void);
 		Sorcerer &operator=(const Sorcerer&);
 		
 		void	polymorph(Victim const &);

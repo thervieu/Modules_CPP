@@ -18,7 +18,7 @@ class AWeapon
 
         int               getAPCost(void) const;
         int               getDamage(void) const;
-        const std::string getName(void) const;
+        std::string getName(void) const;
 
         virtual     void    attack(void) const = 0;
 

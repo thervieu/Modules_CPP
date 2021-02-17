@@ -2,74 +2,96 @@
 
 Character::Character(void)
 {
-    return ;
+	return ;
 }
 
 Character::Character(const std::string &name)
 {
-    this->_name = name;
-    this->_n_index = 0;
-    for (int i = 0; i < 4; i += 1)
-    {
-        this->_inventory[i] = NULL;
-    }
-    return ;
+	this->_name = name;
+	this->_n_index = 0;
+	for (int i = 0; i < 4; i += 1)
+	{
+		this->_inventory[i] = NULL;
+	}
+	return ;
 }
 
 Character::Character(const Character &src)
 {
-    *this = src;
-    return ;
+	for (int i = 0; i < 4; i++)
+	{
+		delete this->_inventory[i];
+	}
+	this->_name = src._name;
+	this->_n_index = src._n_index;
+	for (int i = 0; i < 4; i++)
+	{
+		this->_inventory[i] = NULL;
+		this->_inventory[i] = src._inventory[i]->clone();
+	}
+	return ;
 }
 
 Character::~Character(void)
 {
-    return ;
+	for (int i = 0; i < 4; i++)
+	{
+		delete this->_inventory[i];
+	}
 }
 
 Character	&Character::operator= (const Character &rhs)
 {
-    if (this != &rhs)
-    {
-        this->_name = rhs._name;
-        this->_n_index = rhs._n_index;
-        for (int i = 0; i < 4; i += 1)
-        {
-            this->_inventory[i] = NULL;
-            this->_inventory[i] = rhs._inventory[i]->clone();
-        }
-    }
-    return (*this);
+	if (this != &rhs)
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			delete this->_inventory[i];
+		}
+		this->_name = rhs._name;
+		this->_n_index = rhs._n_index;
+		for (int i = 0; i < 4; i++)
+		{
+			this->_inventory[i] = NULL;
+			this->_inventory[i] = rhs._inventory[i]->clone();
+		}
+	}
+	return (*this);
 }
 
 const std::string	&Character::getName(void) const
 {
-    return (this->_name);
+	return (this->_name);
 }
 
 void	Character::equip(AMateria *m)
 {
-    if (this->_n_index < 3)
-    {
-        this->_inventory[this->_n_index] = m;
-        this->_n_index += 1;
-    }
-    return ;
+	if (this->_n_index < 3)
+	{
+		this->_inventory[this->_n_index] = m;
+		this->_n_index += 1;
+	}
+	return ;
 }
 
 void	Character::unequip(int idx)
 {
-    if (idx >= 0 && idx <= 3)
-    {
-        this->_inventory[idx] = NULL;
-    }
-    return ;
+	if (idx >= 0 && idx <= 3)
+	{
+		this->_inventory[idx] = NULL;
+	}
+	return ;
 }
 
 void	Character::use(int idx, ICharacter &target)
 {
-    if (idx < this->_n_index)
-    {
-        this->_inventory[idx]->use(target);
-    }
+	if (idx >= 0 && idx < this->_n_index)
+		if (this->_inventory[idx] != NULL)
+			this->_inventory[idx]->use(target);
+}
+
+std::ostream &			operator<<(std::ostream &o, ICharacter const &i)
+{
+	o << "This is the character named " << i.getName() << std::endl;
+	return o;
 }

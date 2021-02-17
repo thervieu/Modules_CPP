@@ -6,25 +6,25 @@
 
 class Enemy
 {
-    public:
+	public:
 
-        Enemy(void);
-        Enemy(const Enemy &src);
-        Enemy(const std::string &type, int hp);
+		Enemy(void);
+		Enemy(const Enemy &src);
+		Enemy(int hp, const std::string &type);
 
-        virtual	~Enemy(void);
+		virtual	~Enemy(void);
 
-        Enemy	&operator= (const Enemy &rhs);
+		Enemy	&operator= (const Enemy &rhs);
 
-        int               getHP(void) const;
-        const std::string getType(void) const;
+		int               getHP(void) const;
+		const std::string getType(void) const;
 
-        virtual void      takeDamage(int damage);
+		virtual void      takeDamage(int damage);
 
-    protected:
+	protected:
 
-        int               _hp;
-        std::string       _type;
+		int               _hp;
+		std::string       _type;
 };
 
 #endif

@@ -1,6 +1,8 @@
 #ifndef MATERIASOURCE_HPP
 # define MATERIASOURCE_HPP
 
+# include <iostream>
+
 # include "Ice.hpp"
 # include "Cure.hpp"
 # include "AMateria.hpp"
@@ -22,5 +24,7 @@ class MateriaSource : public IMateriaSource
 		AMateria            *_inventory[4];
 		int                 _n_index;
 };
+
+std::ostream &			operator<<( std::ostream & o, IMateriaSource const & i );
 
 #endif

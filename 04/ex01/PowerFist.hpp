@@ -11,11 +11,11 @@ class PowerFist : public AWeapon
 
         PowerFist(void);
         PowerFist(const PowerFist &src);
-        ~PowerFist(void);
+        virtual	~PowerFist(void);
 
         PowerFist   &operator= (const PowerFist &rhs);
 
-        virtual void  attack(void) const;
+        void  attack(void) const;
 };
 
 #endif

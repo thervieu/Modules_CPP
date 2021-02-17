@@ -10,24 +10,26 @@
 
 class Character : public ICharacter
 {
-    public:
-        Character(void);
-        Character(const std::string &name);
-        Character(const Character &src);
+	public:
+		Character(void);
+		Character(const std::string &name);
+		Character(const Character &src);
 
-        ~Character(void);
+		~Character(void);
 
-        Character                   &operator= (const Character &rhs);
+		Character                   &operator= (const Character &rhs);
 
-        virtual void                equip(AMateria* m);
-        virtual void                unequip(int idx);
-        virtual void                use(int idx, ICharacter& target);
-        virtual const std::string   &getName() const;
+		virtual std::string const	&getName() const;
+		virtual void                equip(AMateria* m);
+		virtual void                unequip(int idx);
+		virtual void                use(int idx, ICharacter& target);
 
-    private:
-        std::string                 _name;
-        AMateria*                   _inventory[4];
-        int                         _n_index;
+	private:
+		std::string                 _name;
+		AMateria*                   _inventory[4];
+		int                         _n_index;
 };
+
+std::ostream &			operator<<(std::ostream &o, ICharacter const &i);
 
 #endif

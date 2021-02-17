@@ -12,14 +12,14 @@ class TacticalMarine : public ISpaceMarine
         TacticalMarine(void);
         TacticalMarine(const TacticalMarine &src);
 
-        ~TacticalMarine(void);
+        virtual ~TacticalMarine(void);
 
         TacticalMarine    &operator= (const TacticalMarine &rhs);
 
-        virtual void          battleCry(void) const;
-        virtual void          meleeAttack(void) const;
-        virtual void          rangedAttack(void) const;
         virtual ISpaceMarine  *clone(void) const;
+        virtual void          battleCry(void) const;
+        virtual void          rangedAttack(void) const;
+        virtual void          meleeAttack(void) const;
 };
 
 #endif

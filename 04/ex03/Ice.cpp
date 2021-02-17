@@ -20,7 +20,7 @@ Ice     &Ice::operator= (const Ice &rhs)
 {
 	if (this != &rhs)
 	{
-		this->xp_ = rhs.xp_;
+		this->_xp = rhs._xp;
 	}
 	return (*this);
 }
@@ -32,7 +32,7 @@ AMateria    *Ice::clone(void) const
 
 void    Ice::use(ICharacter &target)
 {
-	std::cout << "* shoots an ice bolt at " << target.getName() << " *" \
-			  << std::endl;
+	AMateria::use(target);
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 	return ;
 }
