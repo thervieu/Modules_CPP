@@ -64,22 +64,4 @@ int main()
 	delete term;
 
 	delete squad;
-/*
-	std::cout << "Deep Copy" << std::endl;
-
-	TacticalMarine* tact3 = new TacticalMarine;
-	AssaultTerminator* term3 = new AssaultTerminator;
-	
-	Squad *squad2 = new Squad;
-	Squad *squad3 = new Squad;
-
-	squad2->push(tact3);
-	squad3->push(term3);
-
-	squad2 = squad3;
-
-	delete squad2;
-	delete tact3;
-*/
-	return (0);
 }
