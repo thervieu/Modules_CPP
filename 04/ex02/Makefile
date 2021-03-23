@@ -1,9 +1,11 @@
-NAME = phonebook
+NAME = ex02
 
 SRCS_DIR = ./
 
 SRCS =	main.cpp	\
-		Contact.cpp
+		Squad.cpp	\
+		AssaultTerminator.cpp \
+		TacticalMarine.cpp
 
 OBJS_DIR = objs/
 

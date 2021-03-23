@@ -1,9 +1,12 @@
-NAME = phonebook
+NAME = ex00
 
 SRCS_DIR = ./
 
 SRCS =	main.cpp	\
-		Contact.cpp
+		Peon.cpp	\
+		Sheep.cpp	\
+		Sorcerer.cpp \
+		Victim.cpp
 
 OBJS_DIR = objs/
 

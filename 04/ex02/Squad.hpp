@@ -2,6 +2,7 @@
 # define SQUAD_HPP
 
 # include <cstdlib>
+# include <iostream>
 
 # include "ISquad.hpp"
 # include "ISpaceMarine.hpp"

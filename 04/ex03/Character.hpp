@@ -27,7 +27,7 @@ class Character : public ICharacter
 	private:
 		std::string                 _name;
 		AMateria*                   _inventory[4];
-		int                         _n_index;
+		int                         _index;
 };
 
 std::ostream &			operator<<(std::ostream &o, ICharacter const &i);

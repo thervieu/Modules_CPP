@@ -32,7 +32,7 @@ Sheep &				Sheep::operator=(Sheep const &rhs)
 std::ostream &			operator<<(std::ostream &o, Sheep const &i)
 {
 	(void)i;
-	o << "Beeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeh!" << std::endl;
+	o << "Beeeeeeeeeeeeeeh!" << std::endl;
 	return o;
 }
 

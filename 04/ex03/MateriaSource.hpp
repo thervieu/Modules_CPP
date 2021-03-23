@@ -22,9 +22,9 @@ class MateriaSource : public IMateriaSource
 
 	private:
 		AMateria            *_inventory[4];
-		int                 _n_index;
+		int                 _index;
 };
 
-std::ostream &			operator<<( std::ostream & o, IMateriaSource const & i );
+std::ostream &			operator<<(std::ostream & o, IMateriaSource const & i);
 
 #endif

@@ -23,6 +23,7 @@ Squad::~Squad(void)
 
 Squad	&Squad::operator= (const Squad &rhs)
 {
+    std::cout << "Squad operator=" << std::endl;
     if (this != &rhs)
     {
         _destroyUnits();

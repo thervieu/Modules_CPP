@@ -2,7 +2,7 @@
 
 MateriaSource::MateriaSource(void)
 {
-	this->_n_index = 0;
+	this->_index = 0;
 	for (int i = 0; i < 4; i++)
 	{
 		this->_inventory[i] = NULL;
@@ -18,7 +18,7 @@ MateriaSource::MateriaSource(const MateriaSource &src)
 
 MateriaSource::~MateriaSource(void)
 {
-	for (int i = 0; i < _n_index; i++)
+	for (int i = 0; i < _index; i++)
 	{
 		if (this->_inventory[i])
 			delete this->_inventory[i];
@@ -29,7 +29,7 @@ MateriaSource   &MateriaSource::operator= (const MateriaSource &rhs)
 {
 	if (this != &rhs)
 	{
-		for (int i = 0; i < _n_index; i++)
+		for (int i = 0; i < _index; i++)
 		{
 			delete this->_inventory[i];
 		}
@@ -38,17 +38,17 @@ MateriaSource   &MateriaSource::operator= (const MateriaSource &rhs)
 			this->_inventory[i] = NULL;
 			this->_inventory[i] = rhs._inventory[0]->clone();
 		}
-		this->_n_index = rhs._n_index;
+		this->_index = rhs._index;
 	}
 	return (*this);
 }
 
 void    MateriaSource::learnMateria(AMateria *m)
 {
-	if (this->_n_index < 3)
+	if (this->_index < 3)
 	{
-		this->_inventory[this->_n_index] = m;
-		this->_n_index += 1;
+		this->_inventory[this->_index] = m;
+		this->_index++;
 	}
 }
 
@@ -61,7 +61,7 @@ AMateria    *MateriaSource::createMateria(const std::string &type)
 	return (NULL);
 }
 
-std::ostream &		operator<<(std::ostream &o, IMateriaSource const &i)
+std::ostream &operator<<(std::ostream &o, IMateriaSource const &i)
 {
 	(void)i;
 	o << "This is a MateriaSource" << std::endl;

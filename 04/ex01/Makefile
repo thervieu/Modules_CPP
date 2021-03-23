@@ -1,9 +1,16 @@
-NAME = phonebook
+
+NAME = ex01
 
 SRCS_DIR = ./
 
-SRCS =	main.cpp	\
-		Contact.cpp
+SRCS =	main.cpp		\
+		AWeapon.cpp		\
+		Character.cpp		\
+		Enemy.cpp		\
+		PlasmaRifle.cpp		\
+		PowerFist.cpp		\
+		RadScorpion.cpp		\
+		SuperMutant.cpp
 
 OBJS_DIR = objs/
 

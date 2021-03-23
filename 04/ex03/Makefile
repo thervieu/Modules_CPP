@@ -1,9 +1,14 @@
-NAME = phonebook
+NAME = ex03
 
 SRCS_DIR = ./
 
-SRCS =	main.cpp	\
-		Contact.cpp
+SRCS =	AMateria.cpp		\
+		Character.cpp		\
+		Cure.cpp			\
+		Ice.cpp				\
+		MateriaSource.cpp	\
+		main.cpp
+
 
 OBJS_DIR = objs/
 

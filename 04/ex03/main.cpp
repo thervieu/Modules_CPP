@@ -37,7 +37,7 @@ int main()
 	std::cout << "This is my Cure Materia:" << std::endl;
 	std::cout << *tmp << std::endl;
 	
-	std::cout << "This is bob's Cure Materia, it now have higher XP:" << std::endl;
+	std::cout << "This is bob's Cure Materia, it has a higher XP:" << std::endl;
 	std::cout << *tmp2 << std::endl;
 	
 	std::cout << "Bob forgets how to use Cure but try to use it anyway:" << std::endl;

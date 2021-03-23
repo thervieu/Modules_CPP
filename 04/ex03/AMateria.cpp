@@ -49,8 +49,8 @@ unsigned int  AMateria::getXP(void) const
 	return (this->_xp);
 }
 
-std::ostream &			operator<<(std::ostream &o, AMateria const &i)
+std::ostream &operator<<(std::ostream &o, AMateria const &i)
 {
-	o << "Materia type is:" << i.getType() << " XP:" << i.getXP() << std::endl;
+	o << "Materia type is " << i.getType() << ", its XP is " << i.getXP() << std::endl;
 	return o;
 }

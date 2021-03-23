@@ -8,7 +8,7 @@ Character::Character(void)
 Character::Character(const std::string &name)
 {
 	this->_name = name;
-	this->_n_index = 0;
+	this->_index = 0;
 	for (int i = 0; i < 4; i += 1)
 	{
 		this->_inventory[i] = NULL;
@@ -23,7 +23,7 @@ Character::Character(const Character &src)
 		delete this->_inventory[i];
 	}
 	this->_name = src._name;
-	this->_n_index = src._n_index;
+	this->_index = src._index;
 	for (int i = 0; i < 4; i++)
 	{
 		this->_inventory[i] = NULL;
@@ -49,7 +49,7 @@ Character	&Character::operator= (const Character &rhs)
 			delete this->_inventory[i];
 		}
 		this->_name = rhs._name;
-		this->_n_index = rhs._n_index;
+		this->_index = rhs._index;
 		for (int i = 0; i < 4; i++)
 		{
 			this->_inventory[i] = NULL;
@@ -66,10 +66,10 @@ const std::string	&Character::getName(void) const
 
 void	Character::equip(AMateria *m)
 {
-	if (this->_n_index < 3)
+	if (this->_index < 3)
 	{
-		this->_inventory[this->_n_index] = m;
-		this->_n_index += 1;
+		this->_inventory[this->_index] = m;
+		this->_index++;
 	}
 	return ;
 }
@@ -85,7 +85,7 @@ void	Character::unequip(int idx)
 
 void	Character::use(int idx, ICharacter &target)
 {
-	if (idx >= 0 && idx < this->_n_index)
+	if (idx >= 0 && idx < this->_index)
 		if (this->_inventory[idx] != NULL)
 			this->_inventory[idx]->use(target);
 }
