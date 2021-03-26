@@ -3,10 +3,10 @@ NAME = ex00
 SRCS_DIR = ./
 
 SRCS =	main.cpp	\
-		Peon.cpp	\
-		Sheep.cpp	\
 		Sorcerer.cpp \
-		Victim.cpp
+		Victim.cpp	\
+		Peon.cpp	\
+		Sheep.cpp
 
 OBJS_DIR = objs/
 

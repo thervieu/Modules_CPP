@@ -69,6 +69,8 @@ main(void)
     std::cout << std::endl;
 
     std::cout << *Jean;
+    Jean->recoverAP();
+    std::cout << *Jean;
 
     delete Jean;
     delete pr;

@@ -2,19 +2,18 @@
 
 Victim::Victim(void)
 {
-	_name = "Joe";
-	std::cout << "Some random victim called " << _name << " just appeared!" << std::endl;
+	return ;
 }
 
 Victim::Victim(std::string name)
 {
 	_name = name;
 	std::cout << "Some random victim called " << _name << " just appeared!" << std::endl;
-
 }
 
 Victim::Victim(const Victim & sorc)
 {
+	std::cout << "Some random victim called " << _name << " just appeared!" << std::endl;
 	*this = sorc;
 }
 

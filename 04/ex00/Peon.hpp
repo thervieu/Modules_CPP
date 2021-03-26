@@ -17,7 +17,6 @@ class Peon: public Victim
 
 		void	getPolymorphed(void) const;
 	
-	
 	private:
 
 		std::string	_name;

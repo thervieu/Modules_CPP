@@ -6,27 +6,27 @@
 
 class AWeapon
 {
-    public:
+	public:
 
-        AWeapon(void);
-        AWeapon(const AWeapon &src);
-        AWeapon(const std::string &name, int apcost, int damage);
+		AWeapon(void);
+		AWeapon(const AWeapon &src);
+		AWeapon(const std::string &name, int apcost, int damage);
 
-        virtual           ~AWeapon(void);
+		virtual			~AWeapon(void);
 
-        AWeapon           &operator= (const AWeapon &rhs);
+		AWeapon			&operator= (const AWeapon &rhs);
 
-        int               getAPCost(void) const;
-        int               getDamage(void) const;
-        std::string getName(void) const;
+		int				getAPCost(void) const;
+		int				getDamage(void) const;
+		std::string		getName(void) const;
 
-        virtual     void    attack(void) const = 0;
+		virtual	void	attack(void) const = 0;
 
-    protected:
+	protected:
 
-        std::string       _name;
-        int               _damage;
-        int               _apcost;
+		std::string			_name;
+		int					_damage;
+		int					_apcost;
 };
 
 #endif

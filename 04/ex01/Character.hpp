@@ -10,6 +10,7 @@
 class Character
 {
     public:
+
         Character(void);
         Character(const Character &src);
         Character(const std::string &name);

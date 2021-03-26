@@ -1,10 +1,5 @@
 #include "Sheep.hpp"
 
-Sheep::Sheep(void) : Victim()
-{
-	std::cout << "Beeeeeh!" << std::endl;
-}
-
 Sheep::Sheep(std::string const &name) : Victim(name)
 {
 	std::cout << "Beeeeeh!" << std::endl;

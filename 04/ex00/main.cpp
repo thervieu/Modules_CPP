@@ -23,6 +23,8 @@ int		main(void)
 
 	robert.polymorph(joe);
 	std::cout << std::endl;
-
+	
+	robert.polymorph(snow);
+	std::cout << std::endl;
 	return 0;
 }

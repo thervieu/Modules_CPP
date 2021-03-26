@@ -1,21 +1,15 @@
 #include "Peon.hpp"
 
-Peon::Peon(void)
-{
-	_name = "default_Peon";
-	std::cout << "Zog Zog !" << std::endl;
-}
-
 Peon::Peon(std::string name) : Victim(name)
 {
 	_name = name;
 	std::cout << "Zog Zog !" << std::endl;
-
 }
 
-Peon::Peon(const Peon & sorc)
+Peon::Peon(const Peon & peon)
 {
-	*this = sorc;
+	std::cout << "Zog Zog !" << std::endl;
+	*this = peon;
 }
 
 Peon::~Peon(void)
@@ -23,11 +17,11 @@ Peon::~Peon(void)
 	std::cout << "Bleuark..." << std::endl;
 }
 
-Peon &Peon::operator=(const Peon& sorc)
+Peon &Peon::operator=(const Peon& peon)
 {
-	if (this != &sorc)
+	if (this != &peon)
 	{
-		_name = sorc._name;
+		_name = peon._name;
 	}
 	return (*this);
 }
