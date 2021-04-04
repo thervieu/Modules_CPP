@@ -10,7 +10,9 @@ SRCS =	main.cpp		\
 		PlasmaRifle.cpp		\
 		PowerFist.cpp		\
 		RadScorpion.cpp		\
-		SuperMutant.cpp
+		SuperMutant.cpp		\
+		EvilRanger.cpp		\
+		FireSword.cpp
 
 OBJS_DIR = objs/
 

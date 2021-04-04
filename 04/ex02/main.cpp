@@ -48,21 +48,4 @@ int main()
 
 	delete _isquad;
 
-	std::cout << "Copy constructor :" << std::endl;
-	
-	TacticalMarine* tact = new TacticalMarine;
-	AssaultTerminator* term = new AssaultTerminator;
-
-	TacticalMarine* tact2 = new TacticalMarine(*tact);
-	AssaultTerminator* term2 = new AssaultTerminator(*term);
-
-	Squad *squad = new Squad;
-
-	squad->push(tact2);
-	squad->push(term2);
-
-	delete tact;
-	delete term;
-
-	delete squad;
 }
