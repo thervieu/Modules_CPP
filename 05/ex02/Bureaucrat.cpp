@@ -1,14 +1,17 @@
 #include "Bureaucrat.hpp"
 
-std::string Bureaucrat::getName() const {
+std::string Bureaucrat::getName() const 
+{
     return name;
 }
 
-int Bureaucrat::getGrade() const {
+int Bureaucrat::getGrade() const 
+{
     return grade;
 }
 
-Bureaucrat::Bureaucrat() {
+Bureaucrat::Bureaucrat() 
+{
     return;
 }
 
@@ -22,7 +25,8 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name){
     return;
 }
 
-void Bureaucrat::downgrade(int n) {
+void Bureaucrat::downgrade(int n) 
+{
     std::cout << "Downgrade of " << name << " for " << n << " and Grade:" << grade << std::endl;
     if (grade + n > 150)
         throw GradeTooLowException();
@@ -30,7 +34,8 @@ void Bureaucrat::downgrade(int n) {
     return;
 }
 
-void Bureaucrat::upgrade(int n) {
+void Bureaucrat::upgrade(int n) 
+{
     std::cout << "Upgrade of " << name << " for " << n << " and Grade:" << grade << std::endl;
 
     if (grade - n < 1)
@@ -39,17 +44,21 @@ void Bureaucrat::upgrade(int n) {
     return;
 }
 
-Bureaucrat::~Bureaucrat() {
+Bureaucrat::~Bureaucrat() 
+{
     return;
 }
 
-std::ostream &operator<<(std::ostream &output, const Bureaucrat &b) {
+std::ostream &operator<<(std::ostream &output, const Bureaucrat &b) 
+{
     output << "<" << b.getName() << ">, bureaucrat grade " << b.getGrade();
     return output;
 }
 
-void Bureaucrat::signForm(Form &f) {
-    if (grade > f.getS_grade()) {
+void Bureaucrat::signForm(Form &f) 
+{
+    if (grade > f.getS_grade()) 
+    {
         std::cout << name << " cannot sign " << f.getName() << " his grade:" << grade << " and Form grade:"
                   << f.getS_grade() << std::endl;
         return;
@@ -59,13 +68,16 @@ void Bureaucrat::signForm(Form &f) {
     return;
 }
 
-void Bureaucrat::executeForm(const Form &form) {
+void Bureaucrat::executeForm(const Form &form) 
+{
         try
+        
         {
             form.execute(*this);
             std::cout << name << " executed form " << form.getName() << std::endl;
         }
-        catch (std::exception &e) {
+        catch (std::exception &e) 
+        {
             std::cout << name << " cannot execute " << form.getName() << std::endl;
         }
 }

@@ -1,14 +1,17 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::~RobotomyRequestForm() {
+RobotomyRequestForm::~RobotomyRequestForm()
+{
     return;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string name) : Form(name, 72, 45) {
+RobotomyRequestForm::RobotomyRequestForm(std::string name) : Form(name, 72, 45)
+{
     return;
 }
 
-void RobotomyRequestForm::execute(const Bureaucrat &executor) const {
+void RobotomyRequestForm::execute(const Bureaucrat &executor) const
+{
     Form::execute(executor);
     std::cout << "drilling noise ..." << std::endl;
     if (rand() % 2 == 0)

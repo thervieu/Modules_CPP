@@ -1,26 +1,32 @@
 #include "Form.hpp"
 
-std::string Form::getName() const {
+std::string Form::getName() const
+{
     return name;
 }
 
-int Form::getE_grade() const {
+int Form::getE_grade() const
+{
     return e_grade;
 }
 
-int Form::getS_grade() const {
+int Form::getS_grade() const
+{
     return s_grade;
 }
 
-bool Form::getVal() const {
+bool Form::getVal() const
+{
     return val;
 }
 
-Form::~Form() {
+Form::~Form()
+{
     return;
 }
 
-void Form::execute(const Bureaucrat &executor) const {
+void Form::execute(const Bureaucrat &executor) const
+{
     if (executor.getGrade() > e_grade)
         throw GradeTooLowException();
     if (!val)
@@ -36,7 +42,8 @@ Form::Form(std::string name, int s_grade, int e_grade) : name(name), s_grade(s_g
     return;
 }
 
-void Form::beSigned(Bureaucrat *b) {
+void Form::beSigned(Bureaucrat *b)
+{
     if (b->getGrade() > s_grade)
         throw GradeTooLowException();
     val = true;

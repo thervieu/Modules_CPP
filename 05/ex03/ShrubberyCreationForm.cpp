@@ -1,15 +1,18 @@
 #include "ShrubberyCreationForm.hpp"
 
 
-ShrubberyCreationForm::~ShrubberyCreationForm() {
+ShrubberyCreationForm::~ShrubberyCreationForm()
+{
     return;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string name) : Form(name, 145, 137) {
+ShrubberyCreationForm::ShrubberyCreationForm(std::string name) : Form(name, 145, 137)
+{
     return;
 }
 
-void ShrubberyCreationForm::execute(const Bureaucrat &executor) const {
+void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
+{
     Form::execute(executor);
     std::string str = executor.getName().append("_shrubbery");
     char *s = &str[0];

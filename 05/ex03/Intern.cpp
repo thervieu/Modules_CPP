@@ -3,7 +3,8 @@
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 
-Intern::~Intern() {
+Intern::~Intern()
+{
     return;
 }
 
@@ -25,7 +26,8 @@ Form *createSC(std::string name)
     return f;
 }
 
-Intern::Intern() {
+Intern::Intern()
+{
     ch[0].req = "robotomy request";
     ch[1].req = "presidential pardon";
     ch[2].req = "shrubbery creation";
@@ -35,7 +37,8 @@ Intern::Intern() {
     return;
 }
 
-Form * Intern::makeForm(std::string req, std::string name) {
+Form * Intern::makeForm(std::string req, std::string name)
+{
     int i;
 
     i = 0;
