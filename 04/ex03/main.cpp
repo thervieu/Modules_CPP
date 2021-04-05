@@ -6,10 +6,12 @@
 
 int main()
 {
+	std::cout << "Creating a MateriaSource and it learns two Materias" << std::endl;
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
 
+	std::cout << "Creating a Character me and it equips a ice materia and a cure" << std::endl;
 	ICharacter* me = new Character("me");
 
 	AMateria* tmp;
@@ -18,6 +20,7 @@ int main()
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
 
+	std::cout << "Me uses both on Character bob" << std::endl;
 	ICharacter* bob = new Character("bob");
 
 	me->use(0, *bob);
@@ -29,7 +32,7 @@ int main()
 	AMateria* tmp2;
 	tmp2 = tmp->clone();
 	
-	std::cout << "Teaching a copy of my Cure to bob and using it on himself." << std::endl;
+	std::cout << "Teaching a clone of my Cure to bob and using it on himself." << std::endl;
 	bob->equip(tmp2);
 	bob->use(0, *bob);
     std::cout << std::endl;
