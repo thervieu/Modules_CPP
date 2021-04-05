@@ -50,3 +50,17 @@ void Form::beSigned(Bureaucrat *b)
     val = true;
     return;
 }
+
+const char *Form::GradeTooLowException::what(void) const throw()
+{
+	return "Grade Too Low !";
+}
+
+const char *Form::GradeTooHighException::what(void) const throw()
+{
+    return "Grade Too High !";
+}
+const char *Form::FormNotSigned::what(void) const throw()
+{
+    return "Form not signed !";
+}

@@ -29,30 +29,20 @@ class Form
 		virtual void execute(Bureaucrat const &executor) const;
 
 	class GradeTooLowException : public std::exception
-	{
-		public:
-			virtual const char *what(void) const throw()
-			{
-				return "Grade Too Low !";
-			}
-	};
-	
-	class GradeTooHighException : public std::exception
-	{
-		public:
-			virtual const char *what(void) const throw()
-			{
-				return "Grade Too High !";
-			}
-	};
-	class FormNotSigned : public std::exception
-	{
-		public:
-			virtual const char *what(void) const throw()
-			{
-				return "Form not signed !";
-			}
-	};
+    {
+        public:
+            virtual const char *what(void) const throw();
+    };
+    class GradeTooHighException : public std::exception
+    {
+        public:
+            virtual const char *what(void) const throw();
+    };
+    class FormNotSigned : public std::exception
+    {
+        public:
+            virtual const char *what(void) const throw();
+    };
 
 };
 

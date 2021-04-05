@@ -16,7 +16,7 @@ class Bureaucrat
         Bureaucrat(Bureaucrat const &b);
 
     public:
-    
+
         Bureaucrat();
         ~Bureaucrat();
         std::string getName() const;
@@ -27,19 +27,15 @@ class Bureaucrat
         void signForm(Form &f);
         void executeForm(Form const &form);
 
-    class GradeTooLowException : public std::exception {
+    class GradeTooLowException : public std::exception
+    {
         public:
-            virtual const char *what(void) const throw()
-            {
-                return "Grade Too Low !";
-            }
+            virtual const char *what(void) const throw();
     };
-    class GradeTooHighException : public std::exception {
+    class GradeTooHighException : public std::exception
+    {
         public:
-            virtual const char *what(void) const throw()
-            {
-                return "Grade Too High !";
-            }
+            virtual const char *what(void) const throw();
     };
 
 };

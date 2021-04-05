@@ -2,58 +2,66 @@
 
 std::string Bureaucrat::getName() const
 {
-    return name;
+	return name;
 }
 
 int Bureaucrat::getGrade() const
 {
-    return grade;
+	return grade;
 }
 
 Bureaucrat::Bureaucrat()
 {
-    return;
+	return;
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
 {
-    std::cout << "Constructor of " << name << " and Grade:" << grade << std::endl;
-    if (grade < 1)
-        throw GradeTooHighException();
-    else if (grade > 150)
-        throw GradeTooLowException();
-    this->grade = grade;
-    return;
+	std::cout << "Constructor of " << name << " and Grade:" << grade << std::endl;
+	if (grade < 1)
+		throw GradeTooHighException();
+	else if (grade > 150)
+		throw GradeTooLowException();
+	this->grade = grade;
+	return;
 }
 
 void Bureaucrat::downgrade(int n)
 {
-    std::cout << "Downgrade of " << name << " for " << n << " and Grade:" << grade << std::endl;
-    if (grade + n > 150)
-        throw GradeTooLowException();
-    grade += n;
-    return;
+	std::cout << "Downgrade of " << name << " for " << n << " and Grade:" << grade << std::endl;
+	if (grade + n > 150)
+		throw GradeTooLowException();
+	grade += n;
+	return;
 }
 
 void Bureaucrat::upgrade(int n)
 {
-    std::cout << "Upgrade of " << name << " for " << n << " and Grade:" << grade << std::endl;
+	std::cout << "Upgrade of " << name << " for " << n << " and Grade:" << grade << std::endl;
 
-    if (grade - n < 1)
-        throw GradeTooHighException();
-    grade -= n;
-    return;
+	if (grade - n < 1)
+		throw GradeTooHighException();
+	grade -= n;
+	return;
 }
 
 Bureaucrat::~Bureaucrat()
 {
-    return;
+	return;
 }
 
 std::ostream &operator<<(std::ostream &output, const Bureaucrat &b)
 {
-    output << "<" << b.getName() << ">, bureaucrat grade " << b.getGrade();
-    return output;
+	output << "<" << b.getName() << ">, bureaucrat grade " << b.getGrade();
+	return output;
 }
 
+const char *Bureaucrat::GradeTooLowException::what(void) const throw()
+{
+	return "Grade Too Low !";
+}
 
+const char *Bureaucrat::GradeTooHighException::what(void) const throw()
+{
+    return "Grade Too High !";
+}
